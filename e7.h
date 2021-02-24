@@ -1,9 +1,9 @@
 #include "etat.h"
 
-class E7 : Etat
+class E7 : public Etat
 {
 	public :
-	bool transition(Automate & automate, Symbole*s) = 0;
-	
+	bool transition(Automate & automate, Symbole*s);
+	E7();
 	
 }

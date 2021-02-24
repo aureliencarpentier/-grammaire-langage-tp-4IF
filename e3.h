@@ -1,9 +1,10 @@
 #include "etat.h"
 
-class E3 : Etat
+class E3 : public Etat
 {
 	public :
-	bool transition(Automate & automate, Symbole*s) = 0;
+  E3();
+	bool transition(Automate & automate, Symbole*s);
+
 	
-	
-}
+};

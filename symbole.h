@@ -13,7 +13,7 @@ class Symbole {
       virtual ~Symbole() { }
       operator int() const { return ident; }
       virtual void Affiche();
-      bool isTerminal();
+      virtual bool isTerminal() {return true}
       
    protected:
       int ident;
@@ -33,4 +33,5 @@ class Expr :public Symbole {
     Expr():Symbole(EXPR,false) {}
     virtual~Expr() {}
     virtual double eval(constmap<string,double>& valeurs) = 0;
+    bool isTerminal() {return false};
 };

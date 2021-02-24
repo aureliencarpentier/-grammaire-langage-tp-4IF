@@ -1,19 +1,18 @@
-#include "e1.h"
-#include "e4.h"
+#include "e0.h"
 
-E1::E1():Etat("E1"){}
 
-bool E1::transition(Automate & automate, Symbole*s) {
+E0::E0():Etat("E0"){}
+
+bool E0::transition(Automate & automate, Symbole*s) {
         switch (*s){
         case PLUS:
 
-        automate.decalage(s, new E4())
+        automate.decalage(s, new E4("4"))
         
         break;
 
         case MULT:
         
-        automate.decalage(s, new E5());
         break;
         
         case FIN:

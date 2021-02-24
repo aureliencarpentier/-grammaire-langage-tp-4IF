@@ -1,6 +1,7 @@
 #include "automate.h"
 #include "lexer.h"
 #include <string>
+#include "etat.h"
 
 using namespace std;
 
@@ -16,7 +17,7 @@ void Automate::reduction(int n,Symbole * s) {
     delete(statestack.top());
     statestack.pop();
   }
-  Zizi test = statestack.top();
+  Etat * test = statestack.top();
   test->transition(*this,s);
 }
 
