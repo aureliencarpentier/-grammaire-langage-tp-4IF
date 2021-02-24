@@ -4,10 +4,10 @@
 
 using namespace std;
 
-Automate::Automate(string lexername) {
+Automate::Automate(string s) {
 stack<Etat*> statestack; 
 stack<Symbole*> symbolstack ;
-lexer = Lexer("lexername");
+lexer = Lexer("s");
 }
 
 

@@ -10,7 +10,7 @@ class Etat;
 class Automate {
 
   public :
-    Automate ();
+    Automate (string s);
     virtual ~Automate();
     void decalage (Symbole * s, Etat * e);
     void reduction(int n,Symbole * s);
