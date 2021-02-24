@@ -1,6 +1,6 @@
-#include "e1.h"
+#include "e9.h"
 
-bool E1::transition(Automate & automate, Symbole*s) {
+bool E9::transition(Automate & automate, Symbole*s) {
         switch (*s){
         case OPENPAR:
         case CLOSEPAR:
@@ -10,7 +10,6 @@ bool E1::transition(Automate & automate, Symbole*s) {
         case FIN:
         case ERREUR:
         case EXPR:
-        break;
         }
         return false;
     }

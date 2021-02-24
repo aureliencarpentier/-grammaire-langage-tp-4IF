@@ -2,10 +2,15 @@
 
 bool E3::transition(Automate & automate, Symbole*s) {
         switch (*s){
-        case NOMBRE:
-        case VARIABLE:
+        case OPENPAR:
+        case CLOSEPAR:
+        case PLUS:
+        case MULT:
+        case INT:
+        case FIN:
+        case ERREUR:
         case EXPR:
-        case OUVREPAR:
+        break;
         }
         return false;
     }

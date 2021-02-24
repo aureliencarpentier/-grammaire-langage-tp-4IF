@@ -4,10 +4,9 @@
 
 using namespace std;
 
-Automate::Automate(string s) {
+Automate::Automate(string s) : lexer(s) {
 stack<Etat*> statestack; 
 stack<Symbole*> symbolstack ;
-lexer = Lexer("s");
 }
 
 
@@ -17,13 +16,14 @@ void Automate::reduction(int n,Symbole * s) {
     delete(statestack.top());
     statestack.pop();
   }
-  statestack.top()->transition(*this,s);
+  Zizi test = statestack.top();
+  test->transition(*this,s);
 }
 
 void Automate::decalage(Symbole * s, Etat * e) {
-symbolstack.push(s);
-statestack.push(e);
-if (s->isTerminal()) {
-lexer.Avancer();
-}
+  symbolstack.push(s);
+  statestack.push(e);
+  if (s->isTerminal()) {
+  lexer.Avancer();
+  }
 }
