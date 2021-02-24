@@ -29,9 +29,14 @@ class Entier : public Symbole {
 };
 
 class Expr :public Symbole {
+  
   public:
-    Expr():Symbole(EXPR,false) {}
+    Expr(int valeurExpression):Symbole(EXPR,false) {}
     virtual~Expr() {}
-    virtual double eval(constmap<string,double>& valeurs) = 0;
+    virtual int eval();
     bool isTerminal() {return false};
+    
+  protected : 
+
+    int valeurExpression;
 };

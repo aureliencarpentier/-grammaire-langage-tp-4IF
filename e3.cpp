@@ -1,17 +1,24 @@
 #include "e3.h"
-
+#include "symbole.h"
 E3::E3():Etat("E3"){}
 
 bool E3::transition(Automate & automate, Symbole*s) {
         switch (*s){
-        case OPENPAR:
+
         case CLOSEPAR:
+        
+        automate.reduction(1, new Expr() )
+        break;
+
+
         case PLUS:
+        break;
+
+
         case MULT:
-        case INT:
+        break;
+
         case FIN:
-        case ERREUR:
-        case EXPR:
         break;
         }
         return false;

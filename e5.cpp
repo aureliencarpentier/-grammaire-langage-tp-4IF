@@ -1,17 +1,22 @@
 #include "e5.h"
+#include "e7.h"
+#include "e2.h"
+#include "e3.h"
 
 E5::E5():Etat("E5"){}
 
 bool E5::transition(Automate & automate, Symbole*s) {
         switch (*s){
         case OPENPAR:
-        case CLOSEPAR:
-        case PLUS:
-        case MULT:
+        automate.decalage(s, new E2());
+        break;
         case INT:
-        case FIN:
+        automate.decalage(s, new E3());
+        break;
         case ERREUR:
+        break;
         case EXPR:
+        automate.decalage(s, new E7());
         break;
         }
         return false;
