@@ -6,4 +6,4 @@ class E5 : public Etat
 	bool transition(Automate & automate, Symbole*s);
 	E5();
 	
-}
+};

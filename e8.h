@@ -6,4 +6,4 @@ class E8 : public Etat
 	bool transition(Automate & automate, Symbole*s);
 	E8();
 	
-}
+};

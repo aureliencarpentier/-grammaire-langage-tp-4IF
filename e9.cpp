@@ -1,3 +1,4 @@
+#include "automate.h"
 #include "e9.h"
 
 E9::E9():Etat("E9"){}

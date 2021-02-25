@@ -1,9 +1,13 @@
-#include "automate.h"
+
 #include "symbole.h"
 #include <string>
 
+#if ! defined ( ETAT_H )
+#define ETAT_H
+
 using namespace std;
 
+class Automate;
 class Etat { 
 public:
 
@@ -18,3 +22,5 @@ public:
 	protected:
 		string name;
 };
+
+#endif

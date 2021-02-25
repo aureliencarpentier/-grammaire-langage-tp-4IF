@@ -1,3 +1,4 @@
+#include "automate.h"
 #include "e8.h"
 
 E8::E8():Etat("E8"){}

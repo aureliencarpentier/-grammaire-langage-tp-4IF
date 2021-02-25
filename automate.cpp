@@ -28,3 +28,43 @@ void Automate::decalage(Symbole * s, Etat * e) {
   lexer.Avancer();
   }
 }
+
+
+stack<Symbole*> Automate::getSymbolstack() {
+
+  stack<Symbole*> copy;
+  stack<Symbole*> newStack;
+
+  int j = symbolstack.size();
+
+  for(int i = 0; i< j ; i++ )
+  {
+    Symbole * elt = symbolstack.top();
+    copy.push(elt);
+    newStack.push(elt);
+    symbolstack.pop();
+  }
+
+  this->symbolstack = newStack;
+  return copy;
+}
+
+stack<Etat*> Automate::getStatestack() {
+
+  stack<Etat*> copy;
+  stack<Etat*> newStack;
+
+  int j = symbolstack.size();
+
+  for(int i = 0; i< j ; i++ )
+  {
+    Etat * elt = statestack.top();
+    copy.push(elt);
+    newStack.push(elt);
+    symbolstack.pop();
+  }
+
+  this->statestack = newStack;
+  return copy;
+}
+

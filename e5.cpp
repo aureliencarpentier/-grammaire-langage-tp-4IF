@@ -1,3 +1,4 @@
+#include "automate.h"
 #include "e5.h"
 #include "e7.h"
 #include "e2.h"
