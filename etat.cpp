@@ -7,6 +7,9 @@
 
 using namespace std;
 
+Etat::~Etat(){
+  
+}
 Etat::Etat(string name) : name(name){}
 
 void Etat::print() const {

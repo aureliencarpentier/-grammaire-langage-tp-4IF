@@ -19,11 +19,20 @@ class Symbole {
       int ident;
 };
 
+class Fin : public Symbole {
+  public:
+      Fin(int v) : Symbole(FIN), valeur(v) { }
+      virtual ~Fin() { }
+      void Affiche2();
+      int getValeur();
+  protected:
+      int valeur;
+};
+
 class Entier : public Symbole {
   public:
       Entier(int v) : Symbole(INT), valeur(v) { }
-      ~Entier() { }
-      virtual void Affiche();
+      virtual ~Entier() { }
       int getValeur();
   protected:
       int valeur;
@@ -35,7 +44,7 @@ class Expr :public Symbole {
     Expr():Symbole(EXPR){}
     Expr(int valeur):Symbole(EXPR), valeurExpression(valeur) {}
     virtual~Expr() {}
-    virtual int eval();
+    virtual int getValeur();
     bool isTerminal() {return false;};
     
   protected : 

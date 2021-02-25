@@ -15,7 +15,8 @@ public:
 
 	Etat(string name);
 	virtual ~Etat();
-	void print() const;
+	
+  void print() const;
 
   virtual bool transition(Automate & automate, Symbole*s)=0;
   

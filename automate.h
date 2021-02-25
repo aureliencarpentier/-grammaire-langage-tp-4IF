@@ -17,8 +17,10 @@ class Automate {
     virtual ~Automate();
     void decalage (Symbole * s, Etat * e);
     void reduction(int n,Symbole * s);
-    stack<Etat*> getStatestack();
+
     stack<Symbole*> getSymbolstack();
+    stack<Etat*> getStatestack();
+
   protected :
     stack<Etat*> statestack;
     stack<Symbole*> symbolstack;
