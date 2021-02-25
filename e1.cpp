@@ -10,9 +10,7 @@ bool E1::transition(Automate & automate, Symbole*s) {
         cout << "etat 1" << endl;
         switch (*s){
         case PLUS:
-        E4 * nouvelEtat = new E4();
-        nouvelEtat->transition(automate, Symbole *s)
-        automate.decalage(s,nouvelEtat );
+        automate.decalage(s,new E4() );
         
         break;
 

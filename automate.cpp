@@ -9,8 +9,12 @@ using namespace std;
 
 Automate::Automate(string s) : lexer(s) {
 stack<Etat*> statestack; 
-statestack.push(new E0());
+
 stack<Symbole*> symbolstack ;
+
+statestack.push(new E0());
+
+
 }
 
 //obligatoire sinon il y a un problème lors de l'édition des liens
