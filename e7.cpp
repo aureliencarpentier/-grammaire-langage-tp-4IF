@@ -9,8 +9,21 @@ bool E7::transition(Automate & automate, Symbole*s) {
         cout << "etat 7" << endl;
 
         //ici on récupère la pile de symboles contenue dans l'automate (fonction à tester évidement)
+
         stack<Symbole*> symboleStack = automate.getSymbolstack();
 
+        stack<Symbole*> symboleStackCopy = automate.getSymbolstack();
+
+        cout << symboleStack.size() << endl;
+
+        int j = symboleStack.size();
+
+        for(int i ; i < j ; i++){
+
+          symboleStackCopy.top()->Affiche();
+          symboleStackCopy.pop();
+        }
+      
         //ici, on récupère les 3 éléments en tête de la pile
         Symbole * etatPrecedent1 = symboleStack.top();
         symboleStack.pop();

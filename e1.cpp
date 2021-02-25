@@ -7,7 +7,14 @@
 E1::E1():Etat("E1"){}
 
 bool E1::transition(Automate & automate, Symbole*s) {
+
         cout << "etat 1" << endl;
+
+        stack<Symbole*> symboleStack = automate.getSymbolstack();
+        
+        Symbole * symbolePrecedent = symboleStack.top();
+        Expr * exprPrecedent = (Expr*) symbolePrecedent;
+
         switch (*s){
         case PLUS:
         automate.decalage(s,new E4() );
@@ -21,8 +28,6 @@ bool E1::transition(Automate & automate, Symbole*s) {
         
         case FIN:
         // il faut dépiler et renvoyer la valeur de la dernière expression à travers FIN.
-        
-        automate.reduction(1, new Fin(10));
         return true;
 
         break;

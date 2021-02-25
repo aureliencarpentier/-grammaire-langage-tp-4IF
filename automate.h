@@ -20,6 +20,8 @@ class Automate {
 
     stack<Symbole*> getSymbolstack();
     stack<Etat*> getStatestack();
+    void executer();
+
 
   protected :
     stack<Etat*> statestack;

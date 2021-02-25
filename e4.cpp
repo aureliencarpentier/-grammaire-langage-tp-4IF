@@ -2,7 +2,7 @@
 #include "e2.h"
 #include "e3.h"
 #include "e4.h"
-#include "e8.h"
+#include "e7.h"
 #include <iostream>
 
 E4::E4():Etat("E4"){}
@@ -17,7 +17,7 @@ bool E4::transition(Automate & automate, Symbole*s) {
         automate.decalage(s, new E3());
         break;
         case EXPR:
-        automate.decalage(s, new E8());
+        automate.decalage(s, new E7());
         break;
         }
         return false;

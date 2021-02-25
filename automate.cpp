@@ -4,6 +4,17 @@
 #include "etat.h"
 #include <iostream>
 #include "e0.h"
+#include "e1.h"
+#include "e2.h"
+#include "e3.h"
+#include "e4.h"
+#include "e5.h"
+#include "e6.h"
+#include "e7.h"
+#include "e8.h"
+#include "e9.h"
+
+
 
 using namespace std;
 
@@ -12,13 +23,14 @@ stack<Etat*> statestack;
 
 stack<Symbole*> symbolstack ;
 
-statestack.push(new E0());
+
 
 
 }
 
+
 //obligatoire sinon il y a un problème lors de l'édition des liens
-// à complêter
+// à compléter
 Automate::~Automate() {
 
   int st = statestack.size();
@@ -34,13 +46,36 @@ Automate::~Automate() {
   }
 }
 
+void Automate::executer(){
+  bool fini = false;
+  statestack.push(new E0());
+  Symbole *s ; 
+     while(!fini) {
+
+      s=lexer.Consulter();
+
+
+      fini = statestack.top()->transition(*this, s);
+      s->Affiche();
+      cout<<endl;
+      
+   }
+
+  cout << "Résultat final : " <<( (Expr * )symbolstack.top())->getValeur() << endl;
+
+
+}
+
 void Automate::reduction(int n,Symbole * s) {
   Expr * exp = (Expr *) s;
+  //lexer.reculer();
   cout << "voila la valeur de l'expression : "<< exp->getValeur() <<endl;
   for (int i=0;i<n;i++)
   {
     delete(statestack.top());
     statestack.pop();
+    delete(symbolstack.top());
+    symbolstack.pop();
   }
   Etat * test = statestack.top();
   test->transition(*this,s);

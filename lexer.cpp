@@ -1,5 +1,8 @@
 #include "lexer.h"
 
+void Lexer::reculer(){
+  tete--;
+}
 
 Symbole * Lexer::Consulter() {
    if (!tampon) {

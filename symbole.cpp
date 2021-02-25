@@ -3,7 +3,7 @@
 
 void Symbole::Affiche(){
 
-  cout << "affichage du symbole : " << ident;
+  cout << "affichage du symbole : " << ident << " = " << Etiquettes[ident] << endl;
 }
 
 void Fin::Affiche2(){
@@ -22,4 +22,10 @@ int  Entier::getValeur() {
 
 int Expr::getValeur(){
   return valeurExpression;
+}
+
+Expr::Expr(int valeur):Symbole(EXPR), valeurExpression(valeur)  {
+
+cout << "l'expression a une valeur de :" <<valeurExpression<<endl; 
+
 }

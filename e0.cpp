@@ -1,5 +1,6 @@
 #include "automate.h"
 #include "e0.h"
+#include "e1.h"
 #include "e3.h"
 #include "e2.h"
 #include <iostream>
@@ -18,6 +19,9 @@ bool E0::transition(Automate & automate, Symbole*s) {
 
         break;
 
+        case EXPR:
+            automate.decalage(s, new E1());
+            break;
         }
         return false;
     }

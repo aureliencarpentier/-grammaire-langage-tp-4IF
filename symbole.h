@@ -41,8 +41,8 @@ class Entier : public Symbole {
 class Expr :public Symbole {
   
   public:
-    Expr():Symbole(EXPR){}
-    Expr(int valeur):Symbole(EXPR), valeurExpression(valeur) {}
+
+    Expr(int valeur);
     virtual~Expr() {}
     virtual int getValeur();
     bool isTerminal() {return false;};
