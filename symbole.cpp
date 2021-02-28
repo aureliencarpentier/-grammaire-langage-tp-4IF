@@ -26,6 +26,6 @@ int Expr::getValeur(){
 
 Expr::Expr(int valeur):Symbole(EXPR), valeurExpression(valeur)  {
 
-
+cout << "l'expression a une valeur de :" <<valeurExpression<<endl; 
 
 }

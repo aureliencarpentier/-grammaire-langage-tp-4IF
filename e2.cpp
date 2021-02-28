@@ -7,7 +7,7 @@
 E2::E2():Etat("E2"){}
 
 bool E2::transition(Automate & automate, Symbole*s) {
-
+        cout << "etat 2" << endl;
         switch (*s){
           case OPENPAR:
             automate.decalage(s, new E2());
@@ -19,7 +19,11 @@ bool E2::transition(Automate & automate, Symbole*s) {
             break;
           case EXPR:
             automate.decalage(s, new E6());
-            break;
+            break; 
+          default:
+          cout << "expresson invalide" << endl;
+          exit(0);
+
         }
         return false;
 }

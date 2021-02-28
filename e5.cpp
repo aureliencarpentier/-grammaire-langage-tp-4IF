@@ -10,7 +10,7 @@ E5::E5():Etat("E5"){}
 
 bool E5::transition(Automate & automate, Symbole*s) {
         
-
+        cout << "etat 5" << endl;
 
         switch (*s){
         
@@ -22,12 +22,15 @@ bool E5::transition(Automate & automate, Symbole*s) {
         automate.decalage(s, new E3());
         break;
         
-        case ERREUR:
-        break;
         
         case EXPR:
         automate.decalage(s, new E8());
         break;
+
+        default:
+          cout << "expresson invalide" << endl;
+          exit(0);
         }
+        
         return false;
     }

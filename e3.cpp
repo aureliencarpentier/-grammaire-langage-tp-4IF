@@ -5,7 +5,7 @@
 E3::E3():Etat("E3"){}
 
 bool E3::transition(Automate & automate, Symbole*s) {
-
+        cout << "etat 3" << endl;
         //ici on récupère la pile de symboles contenue dans l'automate (fonction à tester évidemment)
         stack<Symbole*> symboleStack = automate.getSymbolstack();
 
@@ -32,6 +32,10 @@ bool E3::transition(Automate & automate, Symbole*s) {
         case FIN:
         automate.reduction(1, new Expr(entierPrecedent->getValeur()));
         break;
+
+        default:
+          cout << "expresson invalide" << endl;
+          exit(0);
         }
         return false;
     }

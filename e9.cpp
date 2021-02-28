@@ -6,6 +6,7 @@ E9::E9():Etat("E9"){}
 
 bool E9::transition(Automate & automate, Symbole*s) {
         
+        cout << "etat 9" << endl;
 
         //ici on récupère la pile de symboles contenue dans l'automate (fonction à tester évidement)
         stack<Symbole*> symboleStack = automate.getSymbolstack();
@@ -22,9 +23,6 @@ bool E9::transition(Automate & automate, Symbole*s) {
 
 
         switch (*s){
-        
-        case OPENPAR:
-        break;
 
         case CLOSEPAR:
         automate.reduction(3, new Expr(entierPrecedent2->getValeur()));
@@ -38,19 +36,13 @@ bool E9::transition(Automate & automate, Symbole*s) {
         automate.reduction(3,new Expr(entierPrecedent2->getValeur()));
         break;
 
-        case INT:
-        break;
-
         case FIN:
         automate.reduction(3,new Expr(entierPrecedent2->getValeur()));
         break;
-        
-        case ERREUR:
-        break;
 
-        case EXPR:
-        break;
-
+        default:
+          cout << "expresson invalide" << endl;
+          exit(0);
         }
         return false;
     }
