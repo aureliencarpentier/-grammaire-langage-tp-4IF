@@ -56,21 +56,21 @@ void Automate::executer(){
 
 
       fini = statestack.top()->transition(*this, s);
-      s->Affiche();
-      cout<<endl;
+
       
    }
 
-  cout << "Résultat final : " <<( (Expr * )symbolstack.top())->getValeur() << endl;
 
+  cout << "Résultat final : " <<( (Expr * )symbolstack.top())->getValeur() << endl;
 
 }
 
 void Automate::reduction(int n,Symbole * s) {
   Expr * exp = (Expr *) s;
   //lexer.reculer();
-  cout << "voila la valeur de l'expression : "<< exp->getValeur() <<endl;
-  for (int i=0;i<n;i++)
+ 
+
+   for (int i=0;i<n;i++)
   {
     delete(statestack.top());
     statestack.pop();

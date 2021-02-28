@@ -8,7 +8,6 @@ E1::E1():Etat("E1"){}
 
 bool E1::transition(Automate & automate, Symbole*s) {
 
-        cout << "etat 1" << endl;
 
         stack<Symbole*> symboleStack = automate.getSymbolstack();
         
@@ -27,13 +26,13 @@ bool E1::transition(Automate & automate, Symbole*s) {
         break;
         
         case FIN:
-        // il faut dépiler et renvoyer la valeur de la dernière expression à travers FIN.
+
         return true;
 
         break;
 
         default:
-          cout << "expresson invalide" << endl;
+          cout << "expression invalide" << endl;
           exit(0);
           
         }

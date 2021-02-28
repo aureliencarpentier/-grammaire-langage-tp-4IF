@@ -2,7 +2,6 @@
 #include <iostream>
 
 void Symbole::Affiche(){
-
   cout << "affichage du symbole : " << ident << " = " << Etiquettes[ident] << endl;
 }
 
@@ -26,6 +25,6 @@ int Expr::getValeur(){
 
 Expr::Expr(int valeur):Symbole(EXPR), valeurExpression(valeur)  {
 
-cout << "l'expression a une valeur de :" <<valeurExpression<<endl; 
+
 
 }

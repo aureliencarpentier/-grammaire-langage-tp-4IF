@@ -14,7 +14,6 @@
 #include "e9.h"
 
 int main(void) {
-  //string chaine("(35++5)*123");
   string chaine;
   cout << "Entrer l'équation:  ";
 	cin >> chaine;

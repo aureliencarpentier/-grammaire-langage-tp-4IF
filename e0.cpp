@@ -7,7 +7,6 @@
 E0::E0():Etat("E0"){}
 
 bool E0::transition(Automate & automate, Symbole*s) {
-        cout << "etat 0" << endl;
         switch (*s){
         case INT:
           automate.decalage(s, new E3());
@@ -25,7 +24,7 @@ bool E0::transition(Automate & automate, Symbole*s) {
         
 
         default:
-          cout << "expresson invalide" << endl;
+          cout << "expression invalide" << endl;
           exit(0);
         }
         return false;

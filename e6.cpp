@@ -9,7 +9,6 @@ E6::E6():Etat("E6"){}
 
 bool E6::transition(Automate & automate, Symbole*s) {
       
-        cout << "etat 6" << endl;
  
         switch (*s){
         
@@ -26,7 +25,7 @@ bool E6::transition(Automate & automate, Symbole*s) {
             break;
 
         default:
-          cout << "expresson invalide" << endl;
+          cout << "expression invalide" << endl;
           exit(0);
         
         }

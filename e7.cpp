@@ -6,7 +6,6 @@ E7::E7():Etat("E7"){}
 
 bool E7::transition(Automate & automate, Symbole*s) {
          
-        cout << "etat 7" << endl;
 
         //ici on récupère la pile de symboles contenue dans l'automate (fonction à tester évidement)
 
@@ -14,13 +13,11 @@ bool E7::transition(Automate & automate, Symbole*s) {
 
         stack<Symbole*> symboleStackCopy = automate.getSymbolstack();
 
-        cout << symboleStack.size() << endl;
 
         int j = symboleStack.size();
 
         for(int i ; i < j ; i++){
 
-          symboleStackCopy.top()->Affiche();
           symboleStackCopy.pop();
         }
       
@@ -58,7 +55,7 @@ bool E7::transition(Automate & automate, Symbole*s) {
         
 
         default:
-          cout << "expresson invalide" << endl;
+          cout << "expression invalide" << endl;
           exit(0);
         }
         return false;

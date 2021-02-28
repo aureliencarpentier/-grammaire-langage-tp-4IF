@@ -8,7 +8,6 @@
 E4::E4():Etat("E4"){}
 
 bool E4::transition(Automate & automate, Symbole*s) {
-        cout << "etat 4" << endl;
         switch (*s){
         case OPENPAR:
         automate.decalage(s, new E2());
