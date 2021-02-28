@@ -16,27 +16,9 @@
 int main(void) {
   string chaine("(1+34)*123");
 
-  //Lexer l(chaine);
   Automate automate(chaine);
   automate.executer();
 
-/*
-   Symbole * s;
-
-   while(*(s=l.Consulter())!=FIN) {
-      s->Affiche();
-      cout<<endl;
-
-      l.Avancer();
-      
-   }
-
-
-   cout << "c'est la fin" << endl;
-   
-   Fin * fin = (Fin *) s;
-   fin->Affiche2();
-*/
    return 0;
 }
 
