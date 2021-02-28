@@ -7,12 +7,12 @@ HEAD=$(wildcard *.h)
 all: $(EXEC)
 
 app: $(OBJ)
-  g++ -o $@ $^ $(FLAGS)
+	g++ -o $@ $^ $(FLAGS)
 
 %.o: %.cpp
-  g++ -o $@ -c $< $(FLAGS)
+	g++ -o $@ -c $< $(FLAGS)
 
 clean: 
-  rm -f *.o core
+	rm -f *.o core
 
 mrproper: clean
