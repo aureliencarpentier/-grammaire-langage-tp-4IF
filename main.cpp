@@ -14,9 +14,11 @@
 #include "e9.h"
 
 int main(void) {
-  string chaine("(1+34)*123");
 
-  Automate automate(chaine);
+  string chaineAnalysee;
+  cout << "Entrer l'équation: ";
+	cin >> chaineAnalysee;
+  Automate automate(chaineAnalysee);
   automate.executer();
 
    return 0;

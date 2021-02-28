@@ -10,7 +10,7 @@ E5::E5():Etat("E5"){}
 
 bool E5::transition(Automate & automate, Symbole*s) {
         
-        cout << "etat 5" << endl;
+
 
         switch (*s){
         

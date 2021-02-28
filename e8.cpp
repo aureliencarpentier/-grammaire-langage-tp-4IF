@@ -5,7 +5,6 @@ E8::E8():Etat("E8"){}
 
 bool E8::transition(Automate & automate, Symbole*s) {
 
-        cout << "etat 8" << endl;
  
         //ici on récupère la pile de symboles contenue dans l'automate (fonction à tester évidement)
         stack<Symbole*> symboleStack = automate.getSymbolstack();

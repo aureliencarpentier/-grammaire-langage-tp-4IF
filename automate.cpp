@@ -29,8 +29,6 @@ stack<Symbole*> symbolstack ;
 }
 
 
-//obligatoire sinon il y a un problème lors de l'édition des liens
-// à compléter
 Automate::~Automate() {
 
   int st = statestack.size();
@@ -56,8 +54,7 @@ void Automate::executer(){
 
 
       fini = statestack.top()->transition(*this, s);
-      s->Affiche();
-      cout<<endl;
+
       
    }
 
@@ -68,8 +65,7 @@ void Automate::executer(){
 
 void Automate::reduction(int n,Symbole * s) {
   Expr * exp = (Expr *) s;
-  //lexer.reculer();
-  cout << "voila la valeur de l'expression : "<< exp->getValeur() <<endl;
+
   for (int i=0;i<n;i++)
   {
     delete(statestack.top());
@@ -77,8 +73,7 @@ void Automate::reduction(int n,Symbole * s) {
     delete(symbolstack.top());
     symbolstack.pop();
   }
-  Etat * test = statestack.top();
-  test->transition(*this,s);
+  statestack.top()->transition(*this,s);
 }
 
 void Automate::decalage(Symbole * s, Etat * e) {
